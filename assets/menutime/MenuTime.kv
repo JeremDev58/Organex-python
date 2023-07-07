@@ -1,0 +1,38 @@
+#:kivy 2.0.0
+
+<MenuPop@ModalView>:
+    size_hint: None, None
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        scroll_y:0
+        effect_y: ScrollEffect()
+        scroll_type: ['content']
+        BoxLayout:
+            orientation:"vertical"
+            Label:
+                size_hint: 1 , 5
+                text: "Définir l'heure"
+                font_size: app.font_size[0]
+                color: hex(app.color_font[0])
+            
+            BoxLayout:
+                orientation:"vertical"
+                BoxLayout:
+                    size_hint: None, 1
+                    orientation:"horizontal"
+                    Input:
+                        text_hint: '00'
+                    Label:
+                        text: ':'
+                    Input:
+                        text_hint: '00'
+                BoxLayout:
+                    size_hint: None, 1
+                    orientation:"horizontal"
+                    Label:
+                        text: "heure"
+                    Label:
+                        text:""
+                    Label:
+                        text:"minute"

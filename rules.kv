@@ -1,0 +1,15 @@
+#:kivy 2.0.0
+
+<Screen, ScreenManager>:
+	canvas.before:
+		Color:
+			rgba: hex(app.color_el[0])
+		Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Label>:
+	color: hex(app.color_font[0])
+
+<Label, Button, Input, TextInput, Widget>:
+	background_color: 0, 0, 0, 0

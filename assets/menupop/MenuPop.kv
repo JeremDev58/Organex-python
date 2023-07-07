@@ -1,0 +1,31 @@
+#:kivy 2.0.0
+
+<MenuPop@ModalView>:
+    size_hint: None, None
+    size: Window.width - (0.2*Window.width), Window.height - (0.2*Window.height)
+    ScrollView:
+        do_scroll_x: True
+        do_scroll_y: False
+        effect_x: ScrollEffect()
+        scroll_type: ['content']
+        BoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            orientation:"vertical"
+            Label:
+                size_hint: 1 , 2
+                text: "Définir les jours"
+            BtnCheck:
+                text: "Lundi"
+            BtnCheck:
+                text: "Mardi"
+            BtnCheck:
+                text: "Mercredi"
+            BtnCheck:
+                text: "Jeudi"
+            BtnCheck:
+                text: "Vendredi"
+            BtnCheck:
+                text: "Samedi"
+            BtnCheck:
+                text: "Dimanche"

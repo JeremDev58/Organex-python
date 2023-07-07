@@ -1,0 +1,31 @@
+#:kivy 2.0.0
+
+<MainScreen@Screen>:
+    background_color: 0,0,0,0
+    name: "main_screen"  
+    BoxLayout:
+        background_color: 0,0,0,0
+        orientation: "vertical"
+        padding: [20]
+        spacing: 20
+        MainBtn:
+            size_hint: 1,.6
+            text: app.get_date()
+            on_press: root.parent.current = "add_task_static"
+        BoxLayout:
+            size_hint_y: .2
+            orientation: "horizontal"
+            spacing: 40
+            MainBtn:
+                text: "Planner"
+            MainBtn:
+                text: "Calendar"
+            
+        BoxLayout:
+            size_hint_y: .2
+            orientation: "horizontal"
+            spacing: 40
+            MainBtn:
+                text: "List"
+            MainBtn:
+                text: "Stat"

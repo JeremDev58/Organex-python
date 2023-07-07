@@ -1,0 +1,13 @@
+#:kivy 2.0.0
+
+<BtnCheck>:
+    text: ""
+    orientation: "horizontal"
+    CheckBox:
+        id: check
+        size_hint: .2, 1
+    Label:
+        size_hint: .8, 1
+        text: root.text
+        font_size: app.font_size[0]
+        color: hex(app.color_font[0])

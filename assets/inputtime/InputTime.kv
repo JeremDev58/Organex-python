@@ -1,0 +1,118 @@
+#:kivy 2.0.0
+
+<InputTime>:
+    container: container
+    size_hint: None, None
+    anchor_x: "center"
+    anchor_y: "center"
+    height_line: 3
+    font_size: '40dp'
+    hint_text: '00'
+    is_hour: True
+    margin: [self.margin_x[0], self.margin_y[0], self.margin_x[1], self.margin_y[1]]
+    padding: [0]
+    height: container.height + self.margin[1] +self.margin[3]
+    width: container.width + self.margin[0] +self.margin[2]
+    canvas.before:
+        Color:
+            rgba: hex(app.color_el[1])
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        id: container
+        hour: hour
+        sep: sep
+        minute: minute
+        orientation: "horizontal"
+        size_hint: None, None
+        padding:[0]
+        spacing: 0.1*self.minimum_height
+        width: self.hour.width + (self.spacing * 2)+ self.minute.width + self.sep.width
+        height: self.minimum_height
+
+        BoxLayout:
+            id: hour
+            input: input_hour
+            line: line_hour
+            size_hint: None, None
+            padding:[0]
+            orientation: "vertical"
+            spacing: 0.1*self.minimum_height
+            width: self.input.width
+            height: self.minimum_height
+
+            InputNum:
+                id: input_hour
+                padding:[0]
+                font_size: root.font_size
+                size_hint: None, None
+                hint_text: root.hint_text
+                foreground_color: app.color_font[0]
+                hint_text_color: app.color_font[1]
+                cursor_color: app.color_primary
+                border: 0, 0, 0, 0
+                background_color: 0, 0, 0, 0
+                multiline: False
+
+            Widget:
+                id: line_hour
+                padding:[0]
+                size_hint: 1, None
+                height: root.height_line
+                canvas:
+                    Color:
+                        group: "color"
+                        rgba: hex(app.color_font[1])
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+        Label:
+            id: sep
+            size_hint: None, 1
+            text: ':'
+            font_size: root.font_size
+            color: app.color_font[0]
+            width: InputNum.get_text_size(self, self.text)[0]
+
+        BoxLayout:
+            id: minute
+            input: input_minute
+            line: line_minute
+            size_hint: None, None
+            padding:[0]
+            orientation: "vertical"
+            spacing: 0.1*self.minimum_height
+            width: self.input.width
+            height: self.minimum_height
+
+            InputNum:
+                id: input_minute
+                padding:[0]
+                is_hour: False
+                font_size: root.font_size
+                size_hint: None, None
+                hint_text: root.hint_text
+                foreground_color: app.color_font[0]
+                hint_text_color: app.color_font[1]
+                cursor_color: app.color_primary
+                border: 0, 0, 0, 0
+                background_color: 0, 0, 0, 0
+                multiline: False
+
+            Widget:
+                id: line_minute
+                padding:[0]
+                size_hint: 1, None
+                height: root.height_line
+                canvas:
+                    Color:
+                        group: "color"
+                        rgba: hex(app.color_font[1])
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+

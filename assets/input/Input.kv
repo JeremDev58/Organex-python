@@ -1,0 +1,12 @@
+#:kivy 2.0.0
+
+<Input@AnchorLayout>:
+    anchor_x: "left"
+    anchor_y: "center"
+    hint_text: ""
+    max_c: 20
+    BaseInput:
+        id: input
+        hint_text: root.hint_text
+        max_c: root.max_c
+        multiline: False

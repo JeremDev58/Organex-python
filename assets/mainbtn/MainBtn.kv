@@ -1,0 +1,32 @@
+#:kivy 2.0.0
+
+<MainBtn@ButtonBehavior+BoxLayout>:
+	text: ""
+	info: ""
+	background_color: hex(app.color_el[1])
+	orientation: "vertical"
+	padding: [20]
+	spacing: 10
+	canvas.before:
+		Color:
+			rgba: hex(app.color_el[1])
+		RoundedRectangle:
+			size: self.size
+			pos: self.pos
+			radius: [40]
+	Label:
+		halign: "left"
+		text_size: self.size
+		text: root.text
+		background_color: 0,0,0,0
+		size_hint: 1, .1
+	BoxLayout:
+		background_color: 0,0,0,0
+		orientation: "horizontal"
+		spacing: 20
+		TextInput:
+			text: root.info
+			background_color: 0,0,0,0
+			read_only: True
+		Image:
+			background_color: 0,0,0,0

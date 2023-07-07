@@ -1,0 +1,27 @@
+#:kivy 2.0.0
+
+#:import hex kivy.utils.get_color_from_hex
+#:import Window kivy.core.window.Window
+#:import Factory kivy.factory.Factory
+#:import ScrollEffect kivy.effects.scroll.ScrollEffect
+#:include assets/modaltime/ModalTime.kv
+
+
+<BtnCheck>:
+    text: ""
+    orientation: "horizontal"
+    CheckBox:
+        id: check
+        size_hint: .2, 1
+    Label:
+        size_hint: .8, 1
+        text: root.text
+        font_size: app.font_size[0]
+        color: hex(app.color_font[0])
+
+
+                
+Screen:
+    Btn:
+        size_hint: 1, .1
+        text: "Pop"

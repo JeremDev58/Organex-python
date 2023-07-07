@@ -1,0 +1,32 @@
+#:kivy 2.0.0
+
+<BtnColor@ButtonBehavior+BoxLayout>:
+    text: ""
+    orientation: "horizontal"
+    color: ""
+    src: ""
+    canvas.before:
+        Color:
+            rgba: hex(app.color_el[1])
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    AnchorLayout:
+        size_hint: .2, 1
+        anchor_x: 'center'
+        anchor_y: 'center'
+        Widget:
+            size_hint: None,None
+            canvas.before:
+                Color:
+                    rgba: hex(root.color)
+                Ellipse:
+                    pos: self.parent.center_x - self.parent.height/2+(0.2*self.parent.height/2)/2, self.parent.center_y -self.parent.height/2+(0.2*self.parent.height/2)/2
+                    size: self.parent.height-(0.2*self.parent.height/2), self.parent.height-(0.2*self.parent.height/2)
+   
+    Label:
+        size_hint: .8, 1
+        text: root.text
+        font_size: app.font_size[0]
+        color: hex(app.color_font[0])

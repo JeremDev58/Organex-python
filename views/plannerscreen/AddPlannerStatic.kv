@@ -1,0 +1,14 @@
+#:kivy 2.0.0
+
+<AddPlannerStatic@Screen>:
+    name: "add_planner_static"
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        effect_y: ScrollEffect()
+        scroll_type: ['content']
+        BoxLayout:
+            height: self.minimum_height
+            size_hint: 1, None
+            Input:
+                max_character: 20

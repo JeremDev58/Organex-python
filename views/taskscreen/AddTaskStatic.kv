@@ -1,0 +1,28 @@
+#:kivy 2.0.0
+#:include assets/modalcolor/ModalColor.kv
+
+<AddTaskStatic@Screen>:
+    name: "add_task_static"
+    BoxLayout:
+        orientation: "vertical"
+        BarTop:
+            text: "Ajouter une tâche"
+            src_left: app.src_icons + "/back.png"
+            src_right: app.src_icons + "/valid.png"
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            scroll_y: 1
+            effect_y: ScrollEffect()
+            StackLayout:
+                height: self.minimum_height	
+                Input:
+                    id: input
+                    size_hint: 1,.1
+                    hint_text: "Titre"
+                BtnColor:
+                    size_hint: 1, .1
+                    text: "Choisir une couleur"
+                    color: app.color_primary
+                    on_press: ModalColor(self).open()
+                    

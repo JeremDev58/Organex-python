@@ -1,0 +1,16 @@
+#:kivy 2.0.0
+
+<PlannerScreen@Screen>:
+    name: "planner_screen"
+    BoxLayout:
+        orientation: "vertical"
+        BarTop:
+            text: "Planning"
+            src_left: app.src_icons + "/back.png"
+            src_right: app.src_icons + "/plus.png"
+            
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            scroll_y: 1
+            effect_y: ScrollEffect()

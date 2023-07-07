@@ -1,0 +1,38 @@
+#:kivy 2.0.0
+<BtnImage@ButtonBehavior+Image>:
+
+<BarTop@BoxLayout>:
+	orientation:"vertical"
+	left: left
+	right: right
+	size_hint: 1,.1
+	src_left: ""
+	src_right: ""
+	text: ""
+	marge: [50]
+	canvas.before:
+		Color:
+			rgba: hex(app.color_primary)
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	Widget:
+		size_hint: 1,.4
+		background_color: 0,0,0,0
+	BoxLayout:
+		size_hint: 1,.6
+		orientation:"horizontal"
+		BtnImage:
+			id: left
+			size_hint: None, 1
+			width: self.height+5
+			source: root.src_left
+		Label:
+			text: root.text
+			size_hint: 1, 1
+		BtnImage:
+			id: right
+			size_hint: None, 1
+			width: self.height +5
+			source: root.src_right
+

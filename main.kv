@@ -1,0 +1,23 @@
+#:kivy 2.0.0
+
+#:import hex kivy.utils.get_color_from_hex
+#:import ScrollEffect kivy.effects.scroll.ScrollEffect
+#:import Window kivy.core.window.Window
+
+#:include rules.kv
+#:include assets/btncolor/BtnColor.kv
+#:include assets/bartop/BarTop.kv
+#:include assets/modalcolor/ModalColor.kv
+#:include assets/input/Input.kv
+#:include assets/btncolor/BtnColor.kv
+#:include assets/mainbtn/MainBtn.kv
+#:include views/mainscreen/MainScreen.kv
+#:include views/plannerscreen/PlannerScreen.kv
+#:include views/plannerscreen/AddPlannerStatic.kv
+#:include views/taskscreen/AddTaskStatic.kv
+
+ScreenManager:
+	MainScreen:
+	PlannerScreen:
+    AddPlannerStatic:
+	AddTaskStatic:
